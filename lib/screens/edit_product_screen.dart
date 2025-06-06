@@ -10,7 +10,11 @@ class EditProductScreen extends ConsumerStatefulWidget {
   final Product product;
   final int index;
 
-  const EditProductScreen({super.key, required this.product, required this.index});
+  const EditProductScreen({
+    super.key,
+    required this.product,
+    required this.index,
+  });
 
   @override
   ConsumerState<EditProductScreen> createState() => _EditProductScreenState();
@@ -26,8 +30,12 @@ class _EditProductScreenState extends ConsumerState<EditProductScreen> {
   void initState() {
     super.initState();
     nameController = TextEditingController(text: widget.product.name);
-    priceController = TextEditingController(text: widget.product.price.toString());
-    quantityController = TextEditingController(text: widget.product.quantity.toString());
+    priceController = TextEditingController(
+      text: widget.product.price.toString(),
+    );
+    quantityController = TextEditingController(
+      text: widget.product.quantity.toString(),
+    );
     imagePath = widget.product.imagePath;
   }
 
@@ -59,12 +67,32 @@ class _EditProductScreenState extends ConsumerState<EditProductScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            TextField(controller: nameController, decoration: const InputDecoration(labelText: 'Nombre')),
-            TextField(controller: priceController, decoration: const InputDecoration(labelText: 'Precio'), keyboardType: TextInputType.number),
-            TextField(controller: quantityController, decoration: const InputDecoration(labelText: 'Cantidad'), keyboardType: TextInputType.number),
+            TextField(
+              controller: nameController,
+              decoration: const InputDecoration(labelText: 'Nombre'),
+            ),
+            const SizedBox(height: 12),
+
+            TextField(
+              controller: priceController,
+              decoration: const InputDecoration(labelText: 'Precio'),
+              keyboardType: TextInputType.number,
+            ),
+            const SizedBox(height: 12),
+
+            TextField(
+              controller: quantityController,
+              decoration: const InputDecoration(labelText: 'Cantidad'),
+              keyboardType: TextInputType.number,
+            ),
             const SizedBox(height: 10),
             if (imagePath != null)
-              Image.file(File(imagePath!), height: 100, width: 100, fit: BoxFit.cover)
+              Image.file(
+                File(imagePath!),
+                height: 100,
+                width: 100,
+                fit: BoxFit.cover,
+              )
             else
               const Icon(Icons.image_not_supported, size: 100),
             ElevatedButton.icon(
