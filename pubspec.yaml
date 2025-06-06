@@ -1,0 +1,30 @@
+name: tienda_abarrotes
+description: "A new Flutter project."
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  riverpod: ^2.6.1 # para manejar el estado de la aplicacion
+  flutter_riverpod: ^2.5.1 # para manejar el estado de la aplicacion
+  hive: ^2.2.3 # para manejar la base de datos local
+  hive_flutter: ^1.1.0 # para manejar la base de datos local
+  path_provider: ^2.1.5 # para manejar rutas de archivos
+  image_picker: ^1.1.2 # para seleccionar imagenes de la galeria  
+  path: ^1.9.0 # para manejar rutas de archivos
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.8
+  hive_generator: ^2.0.1
+
+flutter:
+  uses-material-design: true
