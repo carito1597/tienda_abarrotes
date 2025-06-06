@@ -27,4 +27,10 @@ class ProductListNotifier extends Notifier<List<Product>> {
   void reload() {
     state = _box.values.toList();
   }
+
+  void updateProduct(int index, Product updatedProduct) {
+    _box.putAt(index, updatedProduct);
+    state = _box.values.toList();
+  }
+
 }

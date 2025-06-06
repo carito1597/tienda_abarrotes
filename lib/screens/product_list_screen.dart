@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/product.dart';
 import '../providers/product_provider.dart';
 import '../utils/image_utils.dart';
+import 'edit_product_screen.dart';
 
 class ProductListScreen extends ConsumerWidget {
   const ProductListScreen({super.key});
@@ -112,6 +113,17 @@ class ProductListScreen extends ConsumerWidget {
                             icon: const Icon(Icons.delete),
                             onPressed: () => notifier.deleteProduct(index),
                           ),
+                         onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => EditProductScreen(
+                                  product: product,
+                                  index: index,
+                                ),
+                              ),
+                            );
+                          },
                         );
                       },
                     ),
